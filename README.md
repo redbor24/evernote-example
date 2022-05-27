@@ -43,7 +43,7 @@ virtualenv env27 -p <путь к установленному Python27>\python.e
 
 ### Конфигурация проекта
 Для работы с API Evernote потребуется:
-- зарегистрироваться на [dev.evernote.com](https://dev.evernote.com/) для получения `Consumer Secret` и `Developer token`;
+- зарегистрироваться на [dev.evernote.com](https://dev.evernote.com/doc/) для получения `Consumer Secret` и `Developer token`;
 - получить [Developer Token для песочницы](https://sandbox.evernote.com/api/DeveloperToken.action).
   
 Прописать в файле `.env` следующие ключи:
@@ -52,7 +52,7 @@ virtualenv env27 -p <путь к установленному Python27>\python.e
 - `EVERNOTE_PERSONAL_TOKEN`=Developer Token, полученный при регистрации;
 
 После прохождения регистрации откроется страница с заметкой в единственном блокноте. Из адресной строки браузера
-нужно вытащить следующие значения и добавить их в файл `.env`:
+нужно скопировать следующие значения и добавить их в файл `.env`:
 - `JOURNAL_NOTEBOOK_GUID`= значение-GUID ключа `b=` 
 - `INBOX_NOTEBOOK_GUID`= значение-GUID ключа `b=` 
 
@@ -68,7 +68,7 @@ virtualenv env27 -p <путь к установленному Python27>\python.e
 `python list_notebooks.py`
 
 #### dump_inbox.py
-Выводит в консоль список заметок из одного блокнота.
+Выводит в консоль список всех заметок из одного блокнота.
 
 `python dump_inbox.py`
 
