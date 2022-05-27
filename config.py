@@ -1,16 +1,16 @@
-from pydantic import BaseSettings
+from decouple import config
 
 
-class Settings(BaseSettings):
-    EVERNOTE_CONSUMER_KEY: str
-    EVERNOTE_CONSUMER_SECRET: str
-    EVERNOTE_PERSONAL_TOKEN: str
+class Settings:
+    def __init__(self):
+        pass
 
-    JOURNAL_TEMPLATE_NOTE_GUID: str
-    JOURNAL_NOTEBOOK_GUID: str
+    EVERNOTE_CONSUMER_KEY = config('EVERNOTE_CONSUMER_KEY', '')
+    EVERNOTE_CONSUMER_SECRET = config('EVERNOTE_CONSUMER_SECRET', '')
+    EVERNOTE_PERSONAL_TOKEN = config('EVERNOTE_PERSONAL_TOKEN', '')
 
-    INBOX_NOTEBOOK_GUID: str
-    
-    class Config:
-        env_file = '.env'
-        env_file_encoding = 'utf-8'
+    JOURNAL_TEMPLATE_NOTE_GUID = config('JOURNAL_TEMPLATE_NOTE_GUID', '')
+    JOURNAL_NOTEBOOK_GUID = config('JOURNAL_NOTEBOOK_GUID', '')
+
+    INBOX_NOTEBOOK_GUID = config('INBOX_NOTEBOOK_GUID', '')
+    sandbox = True if config('sandbox', True) in ['True', '1'] else False
